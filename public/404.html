@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StairsLife</title>
+    <meta http-equiv="refresh" content="0; url=./" />
+    <script type="text/javascript">
+      // SPA redirect for GitHub Pages (React Router).
+      // Based on https://github.com/rafgraph/spa-github-pages
+      ;(function () {
+        var l = window.location
+        var repo = '/stairslife'
+        var path = l.pathname
+        if (path.indexOf(repo) !== 0) return
+        var newPath =
+          repo +
+          '/?/' +
+          path
+            .replace(repo, '')
+            .replace(/^\//, '')
+            .replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        l.replace(newPath)
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>
+
